@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>프로파일링에 대한 소개</title>
+<style>
+.turn{
+	text-align: right;
+}
+.calendar{
+	text-align: right;
+}
+summary{
+	background-color: skyblue;
+}
+summary:hover{
+	background: pink;
+}
+#p {
+	color: green;
+}
+line{
+	text-decoration: underline;
+}
+h2,h4{
+	color : yellow;
+	text-shadow: 2px 2px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+table{
+	border-collapse: collapse;
+	border : 1px solid black;
+}
+thead{
+	background: darkgray;
+	color : black;
+	height: 40px;
+}
+input:hover, textarea:hover{
+	background: aliceblue;
+}
+input[type=text]:focus{
+	font-size: 110%;
+}
+</style>
+<script>
+	function out(img){
+		img.src="악의 마음을 읽는 자들.jpg";
+	}
+	function over(img){
+		img.src="악의 마음을 읽는 자들 책.jpg"
+	}
+	function change(){
+		var spanArray = document.getElementsByTagName("span");
+		for (var i = 0; i <spanArray.length; i++) {
+			var span = spanArray[i];
+			span.style.color = "orchid";
+			span.style.fontSize = "20px";
+		}
+	}	
+</script>
+</head>
+<body><audio id="audio" src="StarLight.mp3" controls loop></audio><br>
+
+<canvas id="myCanvas" width="500" height="220" style="background-color: white;"></canvas>
+<script>
+	var canvas = document.getElementById("myCanvas");
+	var context = canvas.getContext("2d");
+
+	context.beginPath();
+	context.lineWidth=5;
+	context.strokeStyle="blue";
+	context.arc(70,70,50,2*Math.PI,false);
+	context.stroke();
+
+	context.beginPath();
+	context.strokeStyle="yellow";
+	context.arc(110,110,50,2*Math.PI,false);
+	context.stroke();
+
+	context.beginPath();
+	context.strokeStyle="black";
+	context.arc(150,70,50,2*Math.PI,false);
+	context.stroke();
+
+	context.beginPath();
+	context.strokeStyle="green";
+	context.arc(190,110,50,2*Math.PI,false);
+	context.stroke();
+
+	context.beginPath();
+	context.strokeStyle="red";
+	context.arc(230,70,50,2*Math.PI,false);
+	context.stroke();
+
+	context.font = "20px Gothic";
+	context.fillStyle = "black";
+	context.fillText("프로파일링이란 ?",70, 200);
+</script>
+
+<div class="turn"><span id="span" style="background-color: aliceblue"> ★ 만든이 : 고재훈 ☆ </span></div>
+<script>
+let span = document.getElementById("span");
+let timerID = setInterval("doRotate()", 200);
+span.onclick = function (e){
+	clearInterval(timerID);
+}
+function doRotate(){
+	let str = span.innerHTML;
+	let firstChar = str.substr(0,1);
+	let remains = str.substr(1, str.length -1);
+	str = remains + firstChar;
+	span.innerHTML = str;
+}</script>
+<div class="calendar">마지막으로 확인한 날짜 : <input type="date" value="2022-06-07"><br>
+	<script>
+	var day = prompt("오늘은 어떤 요일인가요?");
+	switch(day){
+		case"월":
+		case"화":
+		case"수":
+		case"목":
+		case"금":
+		case"토":
+		case"일": document.write("오늘은 "+day+"요일입니다.<br>"); break;
+	}
+
+	let current = new Date();
+	document.write("현재 시간 : ");
+	document.write(current.getHours(),"시, ");
+	document.write(current.getMinutes(),"분, ");
+	document.write(current.getSeconds(),"초<br>");
+</script>
+<form>이름 : <input type="text" size="15" value="" placeholder="고재훈"><input type="button" value="확인"></div><hr>
+<p><b>프로파일링</b>이란 <b>'자료수집'</b>이 원 뜻이나 수사용어로는 범죄유형분석법을 말합니다. 범죄 현장을 분석하여 범인의 습관, 나이, 성격, 직업, 범행 수법을 추론한 뒤 이를 바탕으로 범인을 찾아내는 수사 기법입니다. </p>
+<p>한국에 프로파일링이 처음 도입된 것은 2000년 서울지방경찰청의 <span style="color: blue">권일용</span> 경위가 담당하게 된 것을 시초로, 2004년 경찰청 과학수사과 내에 폭력적 범죄분석팀이 설치되었고, 그 후 2005년 심리학, 사회학 전공자 대상으로 범죄분석 요원을 선발하기 시작하였고, 현재도 왕성하게 활동하고 효과를 거두고 있습니다.</p>
+<h4>프로파일링의 예시 <input type="button" button onclick="change()"></button></h4>
+<details>
+	<summary style="cursor: pointer;">1. 어휘 분석</summary>
+	<p>전화, 편지 등에서 <span>범인이 남긴 메세지</span>를 분석할 때 사용합니다. 특정한 배경에서 지내온 사람들은 그 배경에서 유래된 어휘를 쓰는 경우가 있는데, 메세지에 이런 어휘가 남아 있다면 <span>범인의 사회적 배경</span>을 알아낼 수 있습니다.</p>
+</details>
+<details>
+	<summary style="cursor: pointer;">2. 행동 패턴 분석</summary>
+	<p>범행 시간이 특정한 시간대에 집중되어 있을 경우에, 이를 바탕으로 <span>범인의 직업이나 연령 습성</span>을 파악할 수 있습니다.</p>
+</details>
+<details>
+	<summary style="cursor: pointer;">3. 데이터 마이닝</summary>
+	<p>과거의 사례에 있던 수많은 데이터들 중에서 <span>패턴</span>을 찾아내는 일입니다. 이 데이터 마이닝을 사용하면 <span>특정 패턴</span>을 읽어내어 미래에 일어날 사건 사고들을 미리 예방할 수 있습니다.</p>
+</details><br>
+<h4><em style="font-size: 25px">프로파일링</em>에 관련된 TV 프로 채널</h4>
+<form>
+	<fieldset>
+		<table border="1">
+		<legend><strong>1. 악의 마음을 읽는 자들</strong></legend>
+		<thead><tr align="center"><th>제목</th><th>포스터</th><th>소개</th><th>예고편</th></thead>
+		<tr align="center"><td><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%95%85%EC%9D%98+%EB%A7%88%EC%9D%8C%EC%9D%84+%EC%9D%BD%EB%8A%94+%EC%9E%90%EB%93%A4">악의 마음을 읽는 자들</a></td><td><img src="악의 마음을 읽는 자들.jpg" onmouseout="out(this)" onmouseover="over(this)" width="171px" height="242px"></td><td>대한민국을 공포에 빠뜨린 동기없는 살인이<br> 급증하던 시절, <line>최초의 프로파일러</line>가 <br>연쇄살인범들과 위험한 대화를 시작한다. <br>악의 정점에 선 이들의 마음 속을 치열하게 <br>들여봐야만 했던 프로파일러의 이야기.</td><td><video src="악의 마음을 읽는 자들 비디오.mp4" width="500" height="250" controls></video></td></tr></table>
+		<a href="악의 마음을 읽는 자들.jpg" download>위의 포스터 이미지 다운로드</a>
+	</fieldset>
+</form>
+<form>
+	<fieldset>
+		<table border="1">
+		<legend><strong>2. 괴물</strong></legend>
+		<thead><tr align="center"><th>제목</th><th>포스터</th><th>소개</th><th>예고편</th></thead>
+		<tr align="center"><td><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EA%B4%B4%EB%AC%BC">괴물</a></td><td><img src="괴물.jpg"></td><td>‘괴물은 누구인가. 너인가. 나인가. 우리인가.’ <br>만양에서 펼쳐지는 괴물 같은 두 남자의 심리 추적 스릴러.</td><td><video src="괴물 비디오.mp4" width="500" height="250" controls></video></td></tr></table>
+		<a href="괴물.jpg" download>의 포스터 이미지 다운로드</a>
+	</fieldset>
+</form>
+<h4>악의 마음을 읽는 자들, 괴물 공식 홈페이지</h4>
+<iframe src="https://programs.sbs.co.kr/drama/throughthedarkness/main" width="700" height='500'></iframe>
+<iframe src="https://tv.jtbc.joins.com/replay/pr10011282/pm10061928" width="700" height='500' ></iframe><br>
+<p id="p">출처</p>
+<button onclick="f(event)">출처</button>
+<pre><script>
+	function f(e){
+		let text ="출처 :"+ " https://namu.wiki/w/%ED%94%84%EB%A1%9C%ED%8C%8C%EC%9D%BC%EB%A7%81 <br>" + "&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;https://programs.sbs.co.kr/drama/throughthedarkness/main <br>" + "&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;https://tv.jtbc.joins.com/replay/pr10011282/pm10061928 <br>";
+
+		let p = document.getElementById("p");
+		p.innerHTML = text;
+	}
+</script></pre>
+</body></html>
